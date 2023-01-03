@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        .container{
+            display: flex;
+            justify-content:space-between;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+        .row{
+            display: flex;
+            justify-content:space-between;
+        }
+        img{
+            width:80%;
+        }
+        .call{
+            margin-right: 77px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid gray;
+            padding: 10px 0px;
+        }
+        .str{
+
+            margin-top: 13px;
+            margin-left: 4px;
+            background: red;
+            padding: 13px
+            
+        }
+        .col-card:hover{
+            
+            border: 1px solid gray;
+
+        }
+        
+        
+
+        
+        
+    </style>
+    <title>swiggy</title>
+</head>
+<body>
+    <div class="container">
+      
+    </div>
+
+    <script>
+
+        let food=[
+            
+        {
+            id:1,
+            name:"Hyderabadi Biriyani",
+            cuisine:"Desserts, Chinese",
+            imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/btrhyg6oqzezyqqw6b6j",
+            ratings:4.1,
+            time:"40 mins",
+            amount:"250 for two",
+            offer:"50%off| Use WELCOME50"
+       
+        },
+
+
+        {
+            id:2,
+            name:"Sri Nanjappa Vilas",
+            cuisine:"Chinese, North Indian",
+            imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/tshohvytgsg5yxvdgfiv",
+            ratings:4.3,
+            time:"33 mins",
+            amount:"200 for two",
+            offer:"50%off| Use WELCOME50"
+       
+       
+        },
+
+        {
+            id:3,
+            name:" Altaza Restaurant",
+            cuisine:"Indian, Fast Food",
+            imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/f614e0629dec09dcf2b5bed14312c22d",
+            ratings:4.4,
+            time:"46 mins",
+            amount:"200 for two",
+            offer:"50%off| Use WELCOME50"
+       
+       
+        },
+
+        {
+            id:4,
+            name:" Rowthar Biriyani",
+            cuisine:"Chinese, South Indian",
+            imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/tbwwltwrpqqthlvlpflk",
+            ratings:4.6,
+            time:"53 mins",
+            amount:"200 for two",
+            offer:"50%off| Use WELCOME50"
+       
+       
+        },
+    ]
+
+    let container=document.querySelector(".container")
+
+    let cards=document.createElement("div");
+        cards.classList.add("row");
+        container.appendChild(cards);
+
+    food.forEach(e=>{
+
+
+         let div=document.createElement("div");
+         div.classList.add("col");
+         cards.appendChild(div);
+
+
+         let div2=document.createElement("div");
+         div2.classList.add("col-card");
+         div.appendChild(div2);
+
+         let img=document.createElement("img");
+         img.src=e.imgUrl;
+         div2.appendChild(img);
+
+
+         let head=document.createElement("h2");
+         head.innerHTML=e.name;
+         div2.appendChild(head);
+
+
+         let para=document.createElement("h5");
+         para.innerHTML=e.cuisine;
+         div2.appendChild(para);
+
+         
+         let total=document.createElement("div");
+         total.classList.add("call");
+         div2.appendChild(total);
+
+          
+         let star=document.createElement("div");
+         star.classList.add("class","str");
+         total.appendChild(star)
+
+
+
+         let add=document.createElement("div");
+         add.classList.add("class","add");
+         star.appendChild(add);
+
+         let icon=document.createElement("i");
+         icon.setAttribute("class","bi-star-fill");
+         add.appendChild(icon);
+
+         let fle=document.createElement("span");
+         fle.innerText=e.ratings;
+         add.appendChild(fle)
+
+
+    
+        
+
+
+
+        
+
+
+         let call2=document.createElement("div");
+         total.appendChild(call2);
+
+         let fle2=document.createElement("p");
+         fle2.innerText=e.time;
+         call2.appendChild(fle2)
+
+
+         let call3=document.createElement("div");
+         total.appendChild(call3);
+
+         let fle3=document.createElement("p");
+         fle3.innerText=e.amount;
+         call3.appendChild(fle3)
+
+
+
+         let last=document.createElement("div");
+         div2.appendChild(last);
+
+         let lastss=document.createElement("h6");
+         
+         lastss.innerText=e.offer;
+         div2.appendChild(lastss);
+
+
+
+
+
+        
+			
+			let div8=document.createElement("div");
+			div8.classList.add("incre");
+			div2.appendChild(div8);
+			
+			let btn=document.createElement("button");
+			btn.innerHTML="-";
+			div8.appendChild(btn);
+			
+			btn.addEventListener("click",function(){
+				if(type.value>0){
+					--type.value;
+				}
+			})
+			
+			let type=document.createElement("input");
+			type.value="0";
+			div8.appendChild(type);
+			
+			let incree=document.createElement("button");
+			incree.innerHTML="+";
+			div8.appendChild(incree);
+			
+			incree.addEventListener("click",function(){
+				++type.value;
+			})
+
+    });
+    
+
+        
+     
+     
+        
+
+       
+
+  
+
+    
+
+
+    </script>
+    
+</body>
+</html>
